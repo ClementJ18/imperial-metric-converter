@@ -20,6 +20,7 @@ def m_to_i(measure, symbol, conversion):
 
 def i_to_m(measure, symbol, conversion):
     index = i_values.index(symbol)
+    #convert to to inches
     for value in i_conver[index:]:
         measure *= value
 
@@ -30,11 +31,7 @@ def i_to_m(measure, symbol, conversion):
     return measure
 
 def temp(f=None, c=None):
-    if c:
-        return c * 9/5 + 32
-
-    if f:
-        return (f - 32) * 5/9
+    return c * 9/5 + 32 if c else (f - 32) * 5/9
 
 def mass_i_to_m(measure, symbol, conversion):
     #convert to oz
